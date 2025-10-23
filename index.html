@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galeri Film Anak-Anak</title>
+  <style>
+    body {
+      background-color: #fff0f6;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: #5a2a53;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d63384;
+      margin-bottom: 30px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #ffe0ec;
+      width: 280px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(214, 93, 135, 0.3);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-bottom: 3px solid #ff8fc1;
+    }
+
+    .card-title {
+      background-color: #d63384;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .card-content {
+      display: none;
+      background-color: #fff5fa;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    .card-content p {
+      margin-top: 0;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin-top: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎀 Kumpulan Film Anak-Anak 🎬</h1>
+
+  <div class="gallery">
+
+    <div class="card" onclick="toggleCard(this)">
+      <img src="moana.png" alt="Moana">
+      <div class="card-title">Moana</div>
+      <div class="card-content">
+        <p><strong>Penjelasan:</strong> Moana adalah gadis pemberani yang berlayar ke lautan untuk menyelamatkan pulau dan menemukan jati dirinya.</p>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/LKFuXETZUsI" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <img src="zootopia.jpg" alt="Zootopia">
+      <div class="card-title">Zootopia</div>
+      <div class="card-content">
+        <p><strong>Penjelasan:</strong> Judy si kelinci polisi dan Nick si rubah licik bekerja sama memecahkan misteri di kota hewan modern, Zootopia.</p>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/jWM0ct-OLsM" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <img src="TheLionKing.jpg" alt="The Lion King">
+      <div class="card-title">The Lion King</div>
+      <div class="card-content">
+        <p><strong>Penjelasan:</strong> Kisah epik Simba, anak singa yang menghadapi kehilangan dan menemukan keberanian untuk menjadi raja sejati.</p>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/4sj1MT05lAA" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <img src="Ratatouille.png" alt="Ratatouille">
+      <div class="card-title">Ratatouille</div>
+      <div class="card-content">
+        <p><strong>Penjelasan:</strong> Remy si tikus bermimpi menjadi koki hebat di Paris, meski dia hanyalah seekor tikus kecil di dunia manusia.</p>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/NgsQ8mVkN8w" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <img src="Insideout.jpg" alt="Inside Out">
+      <div class="card-title">Inside Out</div>
+      <div class="card-content">
+        <p><strong>Penjelasan:</strong> Film ini mengeksplorasi emosi manusia melalui karakter Joy, Sadness, Anger, Fear, dan Disgust di dalam pikiran seorang anak.</p>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/seMwpP0yeu4" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <img src="Rapunzel.jpg" alt="Rapunzel (Tangled)">
+      <div class="card-title">Rapunzel (Tangled)</div>
+      <div class="card-content">
+        <p><strong>Penjelasan:</strong> Rapunzel, gadis dengan rambut ajaib, kabur dari menara dan menemukan dunia luar bersama pencuri bernama Flynn.</p>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/ycoY201RTRo" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleCard(card) {
+      const content = card.querySelector('.card-content');
+      const all = document.querySelectorAll('.card-content');
+      all.forEach(c => {
+        if (c !== content) c.style.display = 'none';
+      });
+      content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>
